@@ -22,7 +22,12 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    
+
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          lfs: true
+      
       # Runs a single command using the runners shell
       - name: Start Build
         run: echo Build is started!
@@ -39,3 +44,8 @@ jobs:
       # Runs a single command using the runners shell
       - name: End Build
         run: echo Build is completed!
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: Build
+          path: build
