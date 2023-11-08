@@ -27,10 +27,10 @@ jobs:
       - name: Start Build
         run: echo Build is started!
 
-      - name: Unity Build
-      - uses: game-ci/unity-builder@v3
+      - name: Unity - Builder
+        uses: game-ci/unity-builder@v3.1.0
         env:
-          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          #UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
